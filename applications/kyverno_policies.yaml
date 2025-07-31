@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/akhan4u/argo-testing.git
-    path: kyverno/policies
+    path: kyverno
     targetRevision: main
     directory:
       recurse: true
