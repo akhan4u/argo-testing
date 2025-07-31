@@ -11,7 +11,7 @@ spec:
     targetRevision: main
     directory:
       recurse: true
-      exclude: ".chainsaw/*"
+      exclude: "*/.chainsaw/*"
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
