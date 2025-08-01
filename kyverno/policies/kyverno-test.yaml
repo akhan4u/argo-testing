@@ -1,0 +1,18 @@
+# Test this file using command - kyverno test .
+---
+apiVersion: cli.kyverno.io/v1alpha1
+kind: Test
+metadata:
+  name: require-run-as-non-root-user
+policies:
+  - require-non-root/require-non-root.yaml
+resources:
+  - require-non-root/.chainsaw/
+results:
+  - policy: require-run-as-non-root-user
+    rule: run-as-non-root-user
+    resources:
+    - good-pod-nonroot-01
+    - bad-pod-nonroot-01
+    kind: Pod
+    result: pass
