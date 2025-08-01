@@ -5,6 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  destination:
+    server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/akhan4u/argo-testing.git
     path: kyverno
@@ -12,5 +14,15 @@ spec:
     directory:
       recurse: true
       exclude: "{*/kyverno-test.yaml,*/.chainsaw/*}"
-  destination:
-    server: https://kubernetes.default.svc
+
+# Exclude files in a directory structure
+#   argo-testing/kyverno/
+#   └── policies
+#       ├── kyverno-test.yaml
+#       └── require-non-root
+#           ├── .chainsaw
+#           │   ├── bad.yaml
+#           │   ├── chainsaw-test.yaml
+#           │   ├── good.yaml
+#           │   └── policy-ready.yaml
+#           └── require-non-root.yaml
