@@ -11,6 +11,6 @@ spec:
     targetRevision: main
     directory:
       recurse: true
-      exclude: "*/.chainsaw/*"
+      exclude: "{*/kyverno-test.yaml,*/.chainsaw/*}"
   destination:
     server: https://kubernetes.default.svc
